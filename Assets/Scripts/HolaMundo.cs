@@ -13,6 +13,6 @@ public class HolaMundo : MonoBehaviour
 
     public void Saludar()
     {
-        Debug.Log("Hola Mundo");
+        Debug.Log("Hola Mundos");
     }
 }
