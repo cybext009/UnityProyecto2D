@@ -5,14 +5,13 @@ using UnityEngine;
 
 public class HolaMundo : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        Saludar();
-    }
+    [SerializeField] private string mensaje;
 
+    // Método publico a utilizar en otras clases
     public void Saludar()
     {
-        Debug.Log("Hola Mundo");
+    
+        Debug.Log(mensaje);
+        
     }
 }
