@@ -15,9 +15,4 @@ public class ControlCuadrado : MonoBehaviour
         holaMundo.Saludar();
     }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
 }
