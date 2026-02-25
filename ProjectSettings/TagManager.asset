@@ -11,11 +11,11 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
-  - 
-  - 
-  - 
+  - Suelo
+  - Personaje
+  - Trampa
+  - Escalera
+  - Item
   - 
   - 
   - 
@@ -40,4 +40,19 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Suelo
+    uniqueID: 2513147493
+    locked: 0
+  - name: Personaje
+    uniqueID: 1243378329
+    locked: 0
+  - name: Trampa
+    uniqueID: 281983247
+    locked: 0
+  - name: Escalera
+    uniqueID: 2040396717
+    locked: 0
+  - name: Item
+    uniqueID: 1982775045
     locked: 0
