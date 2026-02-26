@@ -6,13 +6,12 @@ public class Movimiento : MonoBehaviour
 {
 
     [SerializeField] private float velocidadCaminata = 4f;
-    [SerializeField] private float alturaSalto = 4f;
-    [SerializeField] private float velInicialSalto = 24f;
+    [SerializeField] private float alturaSalto = 4f; 
     [SerializeField] private LayerMask capaDeSalto;
+
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
 
-    // Start is called before the first frame update
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
@@ -21,22 +20,22 @@ public class Movimiento : MonoBehaviour
 
     public void Moverse(float movimientoX)
     {
-        rb.velocity = new Vector2(movimientoX* velocidadCaminata, rb.velocity.y);
+        rb.velocity = new Vector2(movimientoX * velocidadCaminata, rb.velocity.y);
     }
 
     public void Saltar(bool debeSaltar)
     {
         if (!boxCollider.IsTouchingLayers(capaDeSalto)) { return; }
-        
-        if(debeSaltar)
-        {
-            rb.velocity = new Vector2(rb.velocity.x, velInicialSalto);
-        }
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
+        if (debeSaltar)
+        {
+            // Obtener gravedad real del Rigidbody2D
+            float gravedad = Physics2D.gravity.y * rb.gravityScale;
+
+            // Calcular velocidad inicial necesaria para alcanzar la altura deseada
+            float velocidadInicialSalto = Mathf.Sqrt(-2f * gravedad * alturaSalto);
+
+            rb.velocity = new Vector2(rb.velocity.x, velocidadInicialSalto);
+        }
     }
 }
