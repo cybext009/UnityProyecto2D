@@ -81,4 +81,12 @@ public class Movimiento : MonoBehaviour
         rb.velocity = new Vector2(rb.velocity.x, 0f);
         rb.velocity = new Vector2(rb.velocity.x, velocidadInicialSalto);
     }
+
+    public void VoltearTransform(float movimientoX)
+    {
+        transform.localScale = new Vector2(
+            Mathf.Sign(movimientoX) * Mathf.Abs(transform.localScale.x),
+            transform.localScale.y
+            );
+    }
 }
