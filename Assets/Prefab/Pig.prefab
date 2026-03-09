@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6956477822410665344}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Detector
   m_TagString: Untagged
   m_Icon: {fileID: 4162164826716764455, guid: 0000000000000000d000000000000000, type: 0}
@@ -46,7 +46,9 @@ GameObject:
   - component: {fileID: 4089686682826363246}
   - component: {fileID: 8979487530211695261}
   - component: {fileID: 7260365159614008306}
-  m_Layer: 0
+  - component: {fileID: -699949309270775846}
+  - component: {fileID: 1299576290275710757}
+  m_Layer: 8
   m_Name: Pig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -249,3 +251,29 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   saltosMaximos: 3
+--- !u!114 &-699949309270775846
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858332786357022460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b690d7c1cf58f7b4f82f39f6051986fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  equipo: 0
+--- !u!114 &1299576290275710757
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6858332786357022460}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba647e7a2803f34db3420e9152358e2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cantAtaque: 1
