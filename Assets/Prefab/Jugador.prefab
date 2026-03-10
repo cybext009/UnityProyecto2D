@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 2219289086798763989}
   - component: {fileID: 4158793244550651053}
   - component: {fileID: -5821218843372039043}
+  - component: {fileID: -1028269608519485190}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -37,7 +38,8 @@ Transform:
   m_LocalPosition: {x: -11.12, y: 4.13, z: -12.054585}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 2811061140963723452}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2814634078593229446
@@ -159,7 +161,19 @@ MonoBehaviour:
     m_ActionId: 1c896cef-6091-41e0-89f2-895ef8fbf46d
     m_ActionName: Player/Look[/Mouse/delta]
   - m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6626380927245419795}
+        m_TargetAssemblyTypeName: ControlJugador, Assembly-CSharp
+        m_MethodName: AlLanzar
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_ActionId: f895a7b4-4eb3-4d91-81ca-57af4004c0c6
     m_ActionName: Player/Fire[/Mouse/leftButton]
   - m_PersistentCalls:
@@ -359,3 +373,48 @@ MonoBehaviour:
   alMorir:
     m_PersistentCalls:
       m_Calls: []
+--- !u!114 &-1028269608519485190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619735019160797534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 707d4f06490a2f14cb06a9a80d884e13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  proyectilPrefab: {fileID: 5751920822033340788, guid: 66f43569efa8e544ba1a89acbd75e364, type: 3}
+  puntoDeSalida: {fileID: 2811061140963723452}
+--- !u!1 &8553827532842974960
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2811061140963723452}
+  m_Layer: 0
+  m_Name: Punto de salida proyectil
+  m_TagString: Untagged
+  m_Icon: {fileID: -5397416234189338067, guid: 0000000000000000d000000000000000, type: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2811061140963723452
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8553827532842974960}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.559, y: -0.228, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 5052900273724656594}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}

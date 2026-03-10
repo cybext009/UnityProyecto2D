@@ -7,11 +7,13 @@ public class ControlJugador : MonoBehaviour
 {
     private Movimiento movimiento;
     private Vector2 entradaControl;
+    private LanzaProyectiles lanzaProyectiles;
 
     // Start is called before the first frame update
     void Start()
     {
         movimiento = GetComponent<Movimiento>();
+        lanzaProyectiles = GetComponent<LanzaProyectiles>();
     }
 
     // Update is called once per frame
@@ -35,4 +37,15 @@ public class ControlJugador : MonoBehaviour
         movimiento.Saltar(context.action.triggered);
     }
 
+    public void AlLanzar(InputAction.CallbackContext context)
+    {
+        // Valida que el botón se haya presionado y no soltado
+        if (!context.action.triggered) { return; }
+
+        // Manda un mensaje a la consola para saber si el botón realmente está funcionando
+        Debug.Log("¡El clic funciona y el jugador intenta disparar!");
+
+        // Manda a llamar a tu script LanzaProyectiles
+        GetComponent<LanzaProyectiles>().Lanzar();
+    }
 }
