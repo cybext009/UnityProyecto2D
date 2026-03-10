@@ -19,6 +19,7 @@ GameObject:
   - component: {fileID: 4158793244550651053}
   - component: {fileID: -5821218843372039043}
   - component: {fileID: -1028269608519485190}
+  - component: {fileID: 4700226737560047933}
   m_Layer: 0
   m_Name: Jugador
   m_TagString: Untagged
@@ -285,6 +286,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 512
   velocidadEscalar: 5
+  modificadorVelSalto: 0.5
   saltosMaximos: 3
 --- !u!114 &6626380927245419795
 MonoBehaviour:
@@ -391,6 +393,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   proyectilPrefab: {fileID: 5751920822033340788, guid: 66f43569efa8e544ba1a89acbd75e364, type: 3}
   puntoDeSalida: {fileID: 2811061140963723452}
+--- !u!114 &4700226737560047933
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6619735019160797534}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b9eed037ec40d5418f8627e441578e1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &8553827532842974960
 GameObject:
   m_ObjectHideFlags: 0
