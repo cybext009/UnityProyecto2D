@@ -281,6 +281,10 @@ MonoBehaviour:
   capaDeSalto:
     serializedVersion: 2
     m_Bits: 448
+  capaDeEscalera:
+    serializedVersion: 2
+    m_Bits: 512
+  velocidadEscalar: 5
   saltosMaximos: 3
 --- !u!114 &6626380927245419795
 MonoBehaviour:

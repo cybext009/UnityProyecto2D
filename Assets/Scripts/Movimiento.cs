@@ -7,6 +7,10 @@ public class Movimiento : MonoBehaviour
     [SerializeField] private float velocidadCaminata = 4f;
     [SerializeField] private float alturaSalto = 4f;
     [SerializeField] private LayerMask capaDeSalto;
+    [SerializeField] private LayerMask capaDeEscalera;
+    [SerializeField] private float velocidadEscalar = 5f;
+    [Range(0, 1)]
+    [SerializeField] private float modificadorVelSalto = 0.5f;
 
     [Header("Configuración de Saltos")]
     [Tooltip("Cantidad total de saltos permitidos (Ej: 3 = 1 normal + 2 extras)")]
@@ -14,6 +18,7 @@ public class Movimiento : MonoBehaviour
 
     private int saltosRestantes;
     private bool enSuelo;
+    private float escalaGravedad = 1f;
 
     private Rigidbody2D rb;
     private BoxCollider2D boxCollider;
@@ -24,6 +29,7 @@ public class Movimiento : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
         boxCollider = GetComponent<BoxCollider2D>();
         animator = GetComponent<Animator>();
+        escalaGravedad = rb.gravityScale;
     }
 
     void Update()
@@ -53,19 +59,24 @@ public class Movimiento : MonoBehaviour
 
     public void Saltar(bool debeSaltar)
     {
+        // Si el botón está presionado debeSaltar es verdadero
         if (debeSaltar)
         {
-            // Salto normal esta tocando el suelo y se preciona el boton
-            if (enSuelo)
+            // Verificamos si podemos saltar 
+            if (enSuelo || (!enSuelo && saltosRestantes > 0))
             {
                 EjecutarFuerzaSalto();
                 saltosRestantes--;
             }
-            // Salto extra esta en el aire y los saltos restantes son mayor que 0 y presiona el botón)
-            else if (!enSuelo && saltosRestantes > 0)
+        }
+        // Si sueltan el boton de salto ya no debe seguir saltando
+        else
+        {
+            // Se detiene el salto si el jugador va hacia arriba
+            if (rb.velocity.y > 0)
             {
-                EjecutarFuerzaSalto();
-                saltosRestantes--;
+                // Multiplicamos la velocidad vertical actual por el modificador 
+                rb.velocity = new Vector2(rb.velocity.x, rb.velocity.y * modificadorVelSalto);
             }
         }
     }
@@ -89,4 +100,16 @@ public class Movimiento : MonoBehaviour
             transform.localScale.y
             );
     }
+
+    public void Escalar(float movimientoY)
+    {
+        if (!boxCollider.IsTouchingLayers(capaDeEscalera))
+        {
+            rb.gravityScale = escalaGravedad;
+            return;
+        }
+        rb.velocity = new Vector2(rb.velocity.x, movimientoY * velocidadEscalar);
+        rb.gravityScale = 0f;
+    }
+
 }

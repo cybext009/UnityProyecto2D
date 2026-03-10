@@ -25,6 +25,7 @@ public class ControlJugador : MonoBehaviour
         {
             movimiento.VoltearTransform(entradaControl.x);
         }
+        movimiento.Escalar(entradaControl.y);
     }
 
     public void Almoverse(InputAction.CallbackContext context)
@@ -34,7 +35,8 @@ public class ControlJugador : MonoBehaviour
 
     public void AlSaltar(InputAction.CallbackContext context)
     {
-        movimiento.Saltar(context.action.triggered);
+        //movimiento.Saltar(context.action.triggered);
+        movimiento.Saltar(context.ReadValueAsButton());
     }
 
     public void AlLanzar(InputAction.CallbackContext context)

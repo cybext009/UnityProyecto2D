@@ -16,8 +16,8 @@ public class ControlEnemigo : MonoBehaviour
     private void Start()
     {
         movimiento = GetComponent<Movimiento>();
-        direccionMovimiento = new Vector2(1f, 0f);
-
+        direccionMovimiento = new Vector2(1f, 1f);
+   
     }
 
     private void Update()
@@ -25,6 +25,7 @@ public class ControlEnemigo : MonoBehaviour
         movimiento.VoltearTransform(direccionMovimiento.x);
         DetectarSuelo();
         movimiento.Moverse(direccionMovimiento.x);
+        movimiento.Escalar(direccionMovimiento.y);
     }
 
     void DetectarSuelo()
