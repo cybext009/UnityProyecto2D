@@ -2,8 +2,10 @@ using UnityEngine;
 
 public class ItemPuntos : MonoBehaviour
 {
-    // Permite configurar los puntos desde el editor
     [SerializeField] private int puntosQueOtorga = 10;
+
+   
+    [SerializeField] private AudioClip audioClip;
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -11,8 +13,21 @@ public class ItemPuntos : MonoBehaviour
 
         if (puntajeJugador != null)
         {
+            // Sumamos los puntos primero
             puntajeJugador.SumarPuntos(puntosQueOtorga);
-            Destroy(gameObject);
+
+            ReproducirSonido();
+            SpriteRenderer sprite = GetComponent<SpriteRenderer>();
+            sprite.enabled = false;
+            Destroy(gameObject, audioClip.length);
         }
+    }
+
+    private void ReproducirSonido()
+    {
+        if (audioClip == null) { return; }
+
+        AudioSource audioSource = GetComponent<AudioSource>();
+        audioSource.PlayOneShot(audioClip);
     }
 }
