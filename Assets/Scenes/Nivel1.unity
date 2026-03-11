@@ -773,11 +773,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 8.04
+      value: 7.41
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.97
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -2818,11 +2818,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 3.66
+      value: 3.69
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0.87334937
+      value: -1.05
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.z
@@ -3593,6 +3593,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fruta
       objectReference: {fileID: 0}
+    - target: {fileID: 8849721729160242081, guid: 42261a02acbed6747be7cc6200d8604b, type: 3}
+      propertyPath: m_audioClip
+      value: 
+      objectReference: {fileID: 8300000, guid: 3aa2a00efdac6d847b05307b02ef4eca, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -3704,7 +3708,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -1.1
       objectReference: {fileID: 0}
     - target: {fileID: 1213847540139982418, guid: 8f3f61ce559bf8843a3adbcc20f80bf7, type: 3}
       propertyPath: m_LocalPosition.z
