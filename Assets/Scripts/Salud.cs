@@ -80,4 +80,15 @@ public class Salud : MonoBehaviour
             Destroy(gameObject, tiempoEnDestruirse);
         }
     }
+    public void Curar(float cantidadCuracion)
+    {
+        // Si el jugador ya está muerto, no tiene sentido curarlo
+        if (estaMuerto) return;
+
+        // Se suma la salud si se pasa del salud maxima el valor se establece en la salud maxima.       
+        saludActual = Mathf.Min(saludActual + cantidadCuracion, saludMax);
+
+        // Se notifica a la barra de la salud de la interfaz  que los valores cambiaron
+        alActualizarSalud?.Invoke();
+    }
 }
