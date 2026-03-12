@@ -4981,7 +4981,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -5821218843372039043, guid: 9aec5ee94aa9ef64287a62b6b2c30ac3, type: 3}
       propertyPath: tiempoInmunidad
-      value: 0
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 2811061140963723452, guid: 9aec5ee94aa9ef64287a62b6b2c30ac3, type: 3}
       propertyPath: m_LocalPosition.y
